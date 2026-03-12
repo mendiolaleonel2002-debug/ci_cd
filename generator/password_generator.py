@@ -15,3 +15,9 @@ def generate_password(length: 12):
 
 def has_upercase(password):
     return any(c.isupper() for c in password)
+
+def has_number(password):
+    return any(c.isdigit() for c in password)
+
+def has_symbol(password):
+    return any(c in string.punctuation for c in password)
