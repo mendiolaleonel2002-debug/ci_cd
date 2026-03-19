@@ -13,7 +13,7 @@ def generate_password(length=12):
     return password
 
 
-def has_upercase(password):
+def has_uppercase(password):
     return any(c.isupper() for c in password)
 
 def has_number(password):
@@ -23,7 +23,7 @@ def has_symbol(password):
     return any(c in string.punctuation for c in password)
 
 def validate_password(password):
-    return has_upercase(password) and has_number(password) and has_symbol(password)
+    return has_uppercase(password) and has_number(password) and has_symbol(password)
 
 def generate_secure_password(length=12):
     while True:
