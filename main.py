@@ -1,16 +1,26 @@
 import sys
-from generate.password_generator import generate_password
+from generator.password_generator import generate_password
 
 def main():
 
     if len(sys.argv) < 2:
         print("Uso: python main.py <longitud>")
         return
-    
+
     try:
-        length = int(sys.agrv[1])
+        length = int(sys.argv[1])
     except ValueError:
-        print("Error: la longitud deber ser un número")
+        print("Error: la longitud debe ser un número")
         return
 
-    
+    if length < 4:
+        print("Error: la longitud mínima de la contraseña es de 4")
+        return
+
+    password = generate_password(length)
+
+    print("Contraseña generada:", password)
+
+
+if __name__ == "__main__":
+    main()

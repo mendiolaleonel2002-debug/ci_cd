@@ -1,10 +1,10 @@
 import random
 import string
 
-def generate_password(length: 12):
+def generate_password(length=12):
     characters = (
         string.ascii_lowercase +
-        string.ascii_upercase +
+        string.ascii_uppercase +
         string.digits +
         string.punctuation
     )
@@ -21,3 +21,12 @@ def has_number(password):
 
 def has_symbol(password):
     return any(c in string.punctuation for c in password)
+
+def validate_password(password):
+    return has_upercase(password) and has_number(password) and has_symbol(password)
+
+def generate_secure_password(length=12):
+    while True:
+        password = generate_password(length)
+        if validate_password(password):
+            return password
