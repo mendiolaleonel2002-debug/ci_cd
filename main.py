@@ -1,6 +1,7 @@
 import sys
 from generator.password_generator import generate_password
 
+
 def main():
 
     if len(sys.argv) < 2:
@@ -14,7 +15,7 @@ def main():
         return
 
     if length < 4:
-        print("Error: la longitud mínima de la contraseña es de 4")
+        print("Error: la longitud mínima es 4")
         return
 
     password = generate_password(length)
