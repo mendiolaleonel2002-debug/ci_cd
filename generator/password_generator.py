@@ -10,7 +10,7 @@ def generate_password(length=12):
         string.punctuation
     )
 
-    password = "".join(random.choice(characters) for _ in range(length) + 1)
+    password = "".join(random.choice(characters) for _ in range(length))
     return password
 
 
